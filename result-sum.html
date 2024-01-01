@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Frontend Mentor | Results summary component</title>
+        <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+        <link rel="stylesheet" href="result-sum.css">
+    </head>
+
+    <body>
+        <main>
+            <section class="main-container">
+
+                <!-- two boxes are in the main-container -->
+                <!-- first box is the left-container -->
+                <div class="left-container">
+                    <!-- first item is the result header -->
+                    <p class="result-header">Your Result</p>
+                    <!-- second item is the score-circle -->
+                    <div class="score-circle">
+                        <p class="actual-score">76</p>
+                        <p class="overall-score">of 100</p>
+                    </div>
+                    <!-- third item is the remark -->
+                    <p class="remark">Great</p>
+                    <!-- fourth item is the details -->
+                    <p class="comparison-text">You scored higher than 65% of the people who have taken these tests.</p>
+                </div>
+
+                <!-- I guessed I have to create a right container for these ones too
+                it did not work well with the initial method, 
+                see comment on line 150 in the css file -->
+
+                <!-- second box is the right-container -->
+                <div class="right-container">
+                    <!-- first item is the summary-header -->
+                    <p class="summary-header">Summary</p>
+
+                    <!-- second item is the light-red box -->
+                    <div class="score-item-light-red-box">
+                        <!-- in this class there are 4 items -->
+                        <img class="img" src="./assets/images/icon-reaction.svg" alt="Reaction">
+                        <p class="label">Reaction</p>
+                        <p class="labelN">80</p>
+                        <p class="labelO">/100</p>
+                    </div>
+
+                    <!-- fourth item is the orange-yellow-box -->
+                    <div class="score-item-orange-yellow-box">
+                        <!-- same four items -->
+                        <img class="img" src="./assets/images/icon-memory.svg" alt="Memory">
+                        <p class="label">Memory</p>
+                        <p class="labelN">92</p>
+                        <p class="labelO">/100</p>
+                    </div>
+
+                    <!-- fifth item is the score-item-green-box -->
+                    <div class="score-item-green-box">
+                        <img class="img" src="./assets/images/icon-verbal.svg" alt="Verbal">
+                        <p class="label0">Verbal</p>
+                        <p class="labelV">61</p>
+                        <p class="labelOG">/100</p>
+                    </div>
+
+                    <!-- sixth itm is the score-item- -->
+                    <div class="score-item-blue-box">
+                        <img class="img" src="./assets/images/icon-visual.svg" alt="Visual">
+                        <p class="label0">Visual</p>
+                        <p class="labelVi">72</p>
+                        <p class="labelOB">/100</p>
+                    </div>
+
+                    <!-- The final item is the button item -->
+                    <button class="continue-button">Continue</button>
+                </div>
+                
+            </section>
+        </main>
+
+        <div class="attribution">
+            Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+            Coded by <a href="#">Marvel.ai</a>.
+        </div>
+
+    </body>
+</html>

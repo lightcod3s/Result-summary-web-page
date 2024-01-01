@@ -1,0 +1,500 @@
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;700;800&family=Outfit:wght@400;700&display=swap');
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+
+:root{
+     /* Primary colors */
+    --Light-red : hsl(0, 100%, 67%);
+    --Orangey-yellow: hsl(39, 100%, 56%);
+    --Green-teal: hsl(166, 100%, 37%);
+    --Cobalt-blue: hsl(234, 85%, 45%);
+
+    /* background gradients */
+    --Light-state-blue: hsl(252, 100%, 67%);
+    --Light-royal-blue: hsl(241, 81%, 54%);
+    
+     /* circle gradients */
+    --Violet-blue : hsla(256, 72%, 46%, 1);
+    --Persian-blue: hsla(241, 72%, 46%, 0);
+
+     /* Neutral */
+    --white: hsl(0, 0%, 100%);
+    --Pale-blue: hsl(221, 100%, 96%);
+    --Light-lavender: hsl(241, 100%, 89%);
+    --Dark-gray-blue: hsl(224, 30%, 27%);
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--white);
+
+}
+.main-container {
+    width: 30rem;
+    height: 22rem;
+    background-color: var(--white);
+    border-radius: 1rem;
+    display: flex;
+    flex: 2;
+    /* no need to change flex direction as the default mode is row which is what i need it to be */
+    align-items: flex-start;
+    box-shadow: rgba(140, 140, 179, 0.2) 0px 7px 29px 0px;
+}
+
+/* first item in the section element is the left-container */
+.left-container {
+    width: 15rem;
+    height: 22rem;
+    background-color: var(--Cobalt-blue);
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.7rem;
+    background: rgb(255,253,255);
+    background: linear-gradient(179deg, rgba(255,253,255,1) 0%, rgba(103,67,253,1) 0%, rgba(52,46,234,1) 100%);
+}
+
+/* first item in the left-container is the result-header */
+.result-header {
+    position: relative;
+    top: 0.7rem;
+    font-size: 1.1rem;
+    /* font-family: ; */
+    font-weight: 500;
+    color: var(--Light-lavender);
+}
+
+/* second item in the left-container is the score-circle (the circle)*/
+.score-circle {
+    position: relative;
+    width: 8rem;
+    height: 8rem;
+    border-radius: 50%;
+    background-color: var(--Dark-gray-blue);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    top: 2.9rem;
+    background: rgb(255,253,255);
+    background: linear-gradient(356deg, rgba(255,253,255,1) 0%, rgba(103,67,253,1) 0%, rgba(52,46,234,1) 31%);
+}
+
+/* score-circle has two items that differ in color and font-size */
+/* score-circle item 1 is actual-score = 76 */
+.actual-score {
+    color: var(--white);
+    font-size: 3rem;
+    font-weight: 700;
+    font-family: 'Hanken Grotesk', sans-serif;
+}
+
+/* overall-score is the second item  (of 100) */
+.overall-score {
+    color: var(--Light-lavender);
+    font-size: 0.7rem;
+}
+
+/* Great is the third item */
+.remark {
+    position: relative;
+    font-size: 1.3rem;
+    font-weight: 500;
+    font-family: 'Hannken Grotesk', sans-serif;
+    color: var(--white);
+    top: 4rem;
+}
+
+/* the fourth item is the comparison-text */
+.comparison-text {
+    position: relative;
+    color: var(--Light-lavender);
+    font-size: 15px;
+    font-family: 'Hanken Grotesk', sans-serif;
+    text-align: center;
+    top: 6rem;
+}
+
+/* I want to space the items in the section element evenly but that will 
+affect the left container since I did not create a container for the items 
+on the right. I would probably givee all the classes space-evenly 
+that is those that I want to have it. Apparently what I assumed this would 
+do was not what it did. This rule below gave the items in each of th score boxes
+space-evenly so I gave the rule to the right-container*/
+
+
+.summary-header,
+.score-item-light-red-box,
+.score-item-orange-yellow-box,
+.score-item-green-box,
+.score-item-blue-box{
+    justify-content: space-evenly;
+}
+
+/* this is for the colors of the scores and text in the score boxes and has 
+to come first before the colors in the respective score boxes */
+.labelO,
+.labelOB,
+.labelOG {
+    color: var(--Light-lavender);
+    font-weight: 500;
+    font-family: 'Hanken Grotesk', sans-serif;
+}
+.labelN,
+.labelV,
+.labelVi {
+    color: var(--Dark-gray-blue);
+    font-weight: 700;
+    font-family: 'Hanken Grotesk', sans-serif;
+}
+
+/* second box in the section element is the right-container */
+.right-container {
+    width: 15rem;
+    height: 22rem;
+    position: relative;
+    padding: 10px;
+    justify-content: space-evenly;
+}
+
+/* first item in the right-container is the summary-header */
+.summary-header {
+    position: relative;
+    left: 0.4rem;
+    top: 0.7rem;
+    font-size: 1.2rem;
+    font-family: 'Hanken Grotesk', sans-serif;
+    font-weight: 700;
+    color: var(--Dark-gray-blue);
+}
+
+/* I have decided to take each of the boxes as a separate item 
+instead of packing them up into one div element */
+
+/* second item in the right-container is the light-red box */
+.score-item-light-red-box {
+    width: 13rem;
+    height: 40px;
+    border-radius: 9px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    left: 0.5rem;
+    top: 1.8rem;
+    color: var(--Light-red);
+    background-color: hsla(0, 100%, 67%, 0.1);
+}
+.score-item-light-red-box:hover {
+    background-color: hsla(0, 100%, 67%, 0.5);
+}
+
+/* fourth item in the section element is the orange-yellow box */
+.score-item-orange-yellow-box {
+    width: 13rem;
+    height: 40px;
+    border-radius: 9px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    left: 0.5rem;
+    top: 2.8rem;
+    color: var(--Orangey-yellow);
+    background-color: hsla(39, 100%, 37%, 0.1);
+}
+.score-item-orange-yellow-box:hover {
+    background-color: hsla(39, 100%, 37%, 0.5);
+}
+
+/* fifth item is the score-item-green-box */
+.score-item-green-box {
+    width: 13rem;
+    height: 40px;
+    border-radius: 9px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    left: 0.5rem;
+    top: 3.8rem;
+    color: var(--Green-teal);
+    background-color: hsla(166, 100%, 37%, 0.1);
+}
+.score-item-green-box:hover {
+    background-color: hsla(166, 100%, 37%, 0.5);
+}
+
+/* sixth item is the score-item-blue-box */
+.score-item-blue-box {
+    width: 13rem;
+    height: 40px;
+    border-radius: 9px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    left: 0.5rem;
+    top: 4.8rem;
+    color: var(--Cobalt-blue);
+    background-color: hsla(234, 85%, 45%, 0.1);
+}
+.score-item-blue-box:hover {
+    background-color: hsla(234, 85%, 45%, 0.5)
+}
+
+/* now I have to set the correct positions 
+to the items in each of the score boxes */
+
+/* for the img icons we have the bellow */
+.img {
+    position: relative;
+    right: 0.5rem;
+}
+
+/* for the text we have the bellow */
+.label {
+    position: relative;
+    right: 1.2rem;
+}
+/* there's a caveat the spelling of the text are 
+different so they have different lengths which 
+makes it difficult to give the four texts the 
+same css rules so I formed a .label and .label0*/
+.label0 {
+    position: relative;
+    right: 1.5rem;
+}
+
+/* Now for the score we have the same thing happening here so I split it 
+to .labelN and .labelV and labelVi*/
+.labelN {
+    position: relative;
+    left: 1rem;
+}
+.labelV {
+    position: relative;
+    left: 1.4rem;
+}
+.labelVi {
+    position: relative;
+    left: 1.4rem;
+}
+
+/* Fortunately it is normal for the overall score, I mean the positining
+of the item in the score boxes. I spoke too soon, it has the caveat too
+so I split it into .labelO , .labelOG and .labelOB*/
+.labelO {
+    position: relative;
+    left: 0.3rem;
+}
+.labelOG {
+    position: relative;
+    left: 0.5rem;
+}
+.labelOB {
+    position: relative;
+    left: 0.5em;
+}
+
+/* for the final item  */
+.continue-button {
+    width: 13rem;
+    height: 40px;
+    border-radius: 50px;
+    position: relative;
+    top: 6.2rem;
+    left: 0.5rem;
+    background-color: var(--Dark-gray-blue);
+    color: var(--white);
+    border: none;
+    cursor: pointer;
+    transition-delay: 0ms;
+}
+.continue-button:hover {
+    background-color: var(--Light-royal-blue);
+}
+
+.attribution {
+    font-style: normal;
+    position: relative;
+    text-align: center;
+    top: 8rem;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+
+@media (max-width: 320px) {
+
+    /* main {
+        display: none;
+    } */
+    body {
+        height: 100vh;
+    }
+    .main-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 320px;
+        height: 660px;
+    }
+
+    .left-container {
+        width: 100vw;
+        position: relative;
+        bottom: 1rem;
+    }
+    .right-container{
+        position: relative;
+        right: 2rem;
+    }
+    .score-item-light-red-box,
+    .score-item-orange-yellow-box,
+    .score-item-green-box,
+    .score-item-blue-box,
+    .continue-button {
+        width: 17rem;
+    }
+
+    .attribution {
+        top: 0rem
+    }
+}
+
+@media (max-width: 375px) {
+
+    main {
+        display: flex;
+    }
+    body {
+        height: 100vh;
+    }
+    .main-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 375px;
+        height: 660px;
+    }
+
+    .left-container {
+        width: 100vw;
+        position: relative;
+        bottom: 1.4rem;
+    }
+    .result-header {
+        top: 1.5rem;
+    }
+    .right-container{
+        width: 100vw;
+        bottom: 4rem;
+        position: relative;
+        right: 0rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .labelN {
+        left: 2rem;
+    }
+    .labelV {
+        left: 2.4rem;
+    }
+    .labelVi {
+        left: 2.4rem;
+    }
+    .score-item-light-red-box,
+    .score-item-orange-yellow-box,
+    .score-item-green-box,
+    .score-item-blue-box,
+    .continue-button {
+        width: 18rem;
+        left: 0rem;
+    }
+    .summary-header {
+        position: relative;
+        left: -6.4rem;
+    }
+
+    .attribution {
+        top: 0rem;
+    }
+}
+
+
+@media (max-width: 425px) {
+
+    main {
+        display: flex;
+    }
+    body {
+        height: 100vh;
+    }
+    .main-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 425px;
+        height: 660px;
+    }
+
+    .left-container {
+        width: 100vw;
+        position: relative;
+        bottom: 1.4rem;
+    }
+    .result-header {
+        top: 1.5rem;
+    }
+    .right-container{
+        width: 100vw;
+        bottom: 4rem;
+        position: relative;
+        right: 0rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .labelN {
+        left: 2rem;
+    }
+    .labelV {
+        left: 2.4rem;
+    }
+    .labelVi {
+        left: 2.4rem;
+    }
+    .score-item-light-red-box,
+    .score-item-orange-yellow-box,
+    .score-item-green-box,
+    .score-item-blue-box,
+    .continue-button {
+        width: 18rem;
+        left: 0rem;
+    }
+    .summary-header {
+        position: relative;
+        left: -6.4rem;
+    }
+
+    .attribution {
+        top: 0rem;
+    }
+}
